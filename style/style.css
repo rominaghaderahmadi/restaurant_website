@@ -148,7 +148,89 @@ body {
 }
 
 /* Menu */
+
 .menu {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: 100%;
+   min-height: 100vh;
+   background: url(../image/background2.png);
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: top center;
+   background-attachment: fixed;
+   padding: 8rem 3rem 4rem;
+   box-sizing: border-box;
+}
+
+.menu h1 {
+   font-family: vazir, sans-serif;
+   color: var(--gold);
+   margin-bottom: 3rem;
+   text-align: center;
+   position: fixed;
+   top: 2rem;
+   left: 50%;
+   transform: translateX(-50%); 
+   z-index: 20;
+   /* سه خط بالا باعث می شود که متن همیشه در وسط قرار بگیرد و پشت آیتم ها نرود */
+}
+
+.menu-items {
+   width: 100%;
+   max-width: 1200px;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+   gap: 3rem 2rem;
+   margin: 0 auto;
+}
+
+.menu-item {
+   display: flex;
+   flex-direction: column;
+   cursor: pointer;
+   transition: 0.2s ease-in-out;
+}
+
+.menu-item:hover {
+   transform: scale(1.03);
+}
+
+.menu-item-image {
+   width: 100%;
+   height: 220px;
+   object-fit: cover;
+   border-radius: 1.5rem;
+}
+
+.menu-item-text {
+   background-color: var(--gold);
+   color: var(--Black);
+   text-align: center;
+   border-radius: 2rem;
+   padding: 0.8rem;
+   margin: -2.5rem auto 0;
+   width: 80%;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+   position: relative;
+   z-index: 2;
+}
+
+@media only screen and (max-width:992px) {
+   .menu-items {
+      grid-template-columns: 30% 30%;
+   }
+}
+
+@media only screen and (max-width:600px) {
+   .menu-items {
+      grid-template-columns: 50%;
+   }
+}
+
+/* Comment */
+.comments {
    display: flex;
    flex-direction: column;
    width: 100%;
@@ -161,7 +243,7 @@ body {
    background-position: center;
 }
 
-.menu h1 {
-   font-family: vazir, sans-serif;
+.comments h2 {
    color: var(--gold);
+   text-align: center;
 }
